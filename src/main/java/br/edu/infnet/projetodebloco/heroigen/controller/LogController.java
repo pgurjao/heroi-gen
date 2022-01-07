@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.edu.infnet.projetodebloco.heroigen.model.LogTurnoBatalha;
+import br.edu.infnet.projetodebloco.heroigen.request.LogTurnoBatalhaRequest;
 import br.edu.infnet.projetodebloco.heroigen.response.LogTurnoBatalhaResponse;
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,9 +23,9 @@ import lombok.extern.slf4j.Slf4j;
 public class LogController {
 	
 	@PostMapping(value = "/salvalog", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<LogTurnoBatalhaResponse> gravarTurnoBatalha(@Valid @RequestBody LogTurnoBatalha logTurnoBatalha) {
+	public ResponseEntity<LogTurnoBatalhaResponse> gravarTurnoBatalha(@Valid @RequestBody LogTurnoBatalhaRequest logTurnoBatalhaRequest) {
 
-		log.info("\n\n O turno a ser logado eh:\n{}", logTurnoBatalha);		
+		log.info("\n\n O turno a ser logado eh:\n{}", logTurnoBatalhaRequest);
 		
 		LogTurnoBatalhaResponse response = new LogTurnoBatalhaResponse(
 //				logTurnoBatalha.getIdBatalha(),

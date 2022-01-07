@@ -2,6 +2,7 @@ package br.edu.infnet.projetodebloco.heroigen.model;
 
 import com.google.gson.GsonBuilder;
 
+import br.edu.infnet.projetodebloco.heroigen.enums.HeroisEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

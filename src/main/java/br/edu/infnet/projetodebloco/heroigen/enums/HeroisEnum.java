@@ -1,4 +1,4 @@
-package br.edu.infnet.projetodebloco.heroigen.model;
+package br.edu.infnet.projetodebloco.heroigen.enums;
 
 public enum HeroisEnum {
 	

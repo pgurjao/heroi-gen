@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.edu.infnet.projetodebloco.heroigen.enums.HeroisEnum;
 import br.edu.infnet.projetodebloco.heroigen.model.Heroi;
-import br.edu.infnet.projetodebloco.heroigen.model.HeroisEnum;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

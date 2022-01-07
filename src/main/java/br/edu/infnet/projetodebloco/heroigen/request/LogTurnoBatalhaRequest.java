@@ -1,4 +1,4 @@
-package br.edu.infnet.projetodebloco.heroigen.model;
+package br.edu.infnet.projetodebloco.heroigen.request;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -18,7 +18,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class LogTurnoBatalha {
+public class LogTurnoBatalhaRequest {
 	
 	@NotBlank(message = "idBatalha não pode ser vazio")
 	private String idBatalha;
