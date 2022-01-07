@@ -1,6 +1,9 @@
 package br.edu.infnet.projetodebloco.heroigen.controller;
 
 
+import java.net.URISyntaxException;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.edu.infnet.projetodebloco.heroigen.model.ItemRanking;
 import br.edu.infnet.projetodebloco.heroigen.request.RankingRequest;
-import br.edu.infnet.projetodebloco.heroigen.response.RankingResponse;
-import br.edu.infnet.projetodebloco.heroigen.service.CalculaRankingService;
+import br.edu.infnet.projetodebloco.heroigen.service.RankingService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -26,31 +29,36 @@ import lombok.extern.slf4j.Slf4j;
 public class RankingController {
 	
 	@Autowired
-	CalculaRankingService calculaRankingService;
+	RankingService rankingService;
 	
 	@GetMapping(value = "/")
 	public ResponseEntity<String> getRanking() {
 		
-		RankingResponse response = new RankingResponse();
+		List<ItemRanking> ranking = rankingService.getRanking();
+		
+		if (ranking.size() == 0)
+			return ResponseEntity.status(HttpStatus.NOT_FOUND)
+					.contentType(MediaType.TEXT_PLAIN).body("Ranking vazio!");
 		
 		return ResponseEntity.ok()
-				.contentType(MediaType.APPLICATION_JSON).body(response.toString());
+				.contentType(MediaType.APPLICATION_JSON).body(ranking.toString());
 	}
 	
 	@PostMapping(value = "/salvaranking", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> gravarRanking(@Valid @RequestBody RankingRequest request) {
+	public ResponseEntity<String> gravarRanking(@Valid @RequestBody RankingRequest request) throws URISyntaxException {
 
-		ResponseEntity<String> response = new ResponseEntity<String>(HttpStatus.OK);
+		ResponseEntity<String> response = new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
 		
-		log.info("\n\n A batalha a ser rankeada é:\n{}", request);
+		log.info("\n\n A batalha a ser rankeada é:\n{}", request.getIdBatalha());
 		
-		if (!calculaRankingService.calculaRanking(request.getIdBatalha()))
+		if (!rankingService.calculaRanking(request.getIdBatalha())) {
 			response = ResponseEntity.badRequest().contentType(MediaType.TEXT_PLAIN)
-			.body("Batalha nao localizada ou nao encerrada");
+			.body(rankingService.getErrorMessage());
+		} else {
+			response = ResponseEntity.created(null).contentType(MediaType.TEXT_PLAIN)
+					.body("Inserido no ranking com sucesso!");
+		}
 			
-//		response.
-//		response.setDetails("Entrada no log registrada com sucesso");
-		
 		return response;
 	}
 }

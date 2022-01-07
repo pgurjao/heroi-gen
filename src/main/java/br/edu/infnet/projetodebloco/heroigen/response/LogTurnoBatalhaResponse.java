@@ -15,18 +15,6 @@ import lombok.Setter;
 @Builder
 public class LogTurnoBatalhaResponse {
 	
-//	private String idBatalha;
-//	
-//	private String usuario;
-//	
-//	private String heroi;
-//
-//	private String monstro;
-//	
-//	private String iniciativa;
-//	
-//	private Integer dano;
-	
 	private Integer status;
 	
 	private String details;

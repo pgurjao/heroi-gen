@@ -1,5 +1,8 @@
-package br.edu.infnet.projetodebloco.heroigen.request;
+package br.edu.infnet.projetodebloco.heroigen.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -7,6 +10,9 @@ import javax.validation.constraints.NotNull;
 
 import com.google.gson.GsonBuilder;
 
+import br.edu.infnet.projetodebloco.heroigen.enums.HeroisEnum;
+import br.edu.infnet.projetodebloco.heroigen.enums.IniciativaEnum;
+import br.edu.infnet.projetodebloco.heroigen.enums.MonstrosEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,22 +24,27 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class LogTurnoBatalhaRequest {
+@Entity
+public class ItemLog {
 	
-	@NotBlank(message = "idBatalha não pode ser vazio")
-	private String idBatalha;
+	@Id @GeneratedValue
+	private Integer id;
+
+	@NotNull
+	@Min(value = 1, message="IdBatalha não pode ser negativo")
+	private Integer id_batalha;
 	
 	@NotBlank(message = "Usuario não pode ser vazio")
 	private String usuario;
 	
-	@NotBlank(message = "Heroi não pode ser vazio")
-	private String heroi;
+	@NotNull(message = "Herói não pode ser vazio")
+	private HeroisEnum heroi;
 
-	@NotBlank(message = "Monstro não pode ser vazio")
-	private String monstro;
+	@NotNull(message = "Monstro não pode ser vazio")
+	private MonstrosEnum monstro;
 	
-	@NotBlank(message = "Iniciativa não pode ser vazio")
-	private String iniciativa;
+	@NotNull(message = "Iniciativa não pode ser vazio")
+	private IniciativaEnum iniciativa;
 	
 	@Min(value = 0, message="Dano não pode ser negativo")
 	@Max(value = 18, message="Dano não pode ser maior que 18")
