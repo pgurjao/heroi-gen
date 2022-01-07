@@ -73,7 +73,6 @@ Exemplo:
 ```
 
 <h2 id="ranking">Microserviço /ranking</h2>
-## Microserviço /ranking
 
 Exibe o ranking atual contendo uma lista com nome dos usuários e a respectiva pontuação no final da partida, ordenada de forma decrescente por pontos. Também calcula a pontuação do usuário ao final da partida e insere o resultado no ranking em ordem decrescente de pontos.
 
