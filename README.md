@@ -81,7 +81,7 @@ Ao chamar via `GET` o ranking atual é retornado via JSON. Exemplo:
 ```json
 {
   {
-    "posicao": 1
+    "posicao": 1,
     "idBatalha": "123456",
     "usuario": "Bruninha Destruidora",
     "pontuacao": 56
