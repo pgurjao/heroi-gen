@@ -2,7 +2,7 @@ package br.edu.infnet.projetodebloco.heroigen.model;
 
 public enum HeroisEnum {
 	
-	ARQUEIRO("Arqueiro"), ANAO("Anão"), MAGO("Mago");
+	GUERREIRO("Guerreiro"), BARBARO("Barbaro"), PALADINO("Paladino");
 
 	private final String heroi;
 
