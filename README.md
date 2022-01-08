@@ -19,7 +19,7 @@ O objetivo é projetar e implementar os serviços REST de um jogo de RPG baseado
 
 <h2 id="heroi">Microserviço /heroi</h2>
 
-Sorteia o herói e retorna as suas características. É chamado via `GET` e retorna um JSON com os dados. Exemplo:
+Lista todos os heróis cadastrados ou retorna um herói específico e as suas características. É chamado via `GET` e retorna um JSON com os dados. Exemplo:
 
 ```json
 {
