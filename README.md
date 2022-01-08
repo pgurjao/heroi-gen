@@ -108,7 +108,7 @@ Ao chamar via `GET` o ranking atual é retornado via JSON. Exemplo:
 ```
 
 
-Ao chamar via `POST` é feita a inserção da pontuação de uma batalha finalizada do usuário no ranking. O serviço irá buscar no Log os turnos daquela idBatalha e computar a pontuação final. O body deve conter apenas o id da batalha finalizada a ser inserida no ranking. Exemplo:
+Ao chamar via `POST` é feita a inserção da pontuação de uma batalha finalizada do usuário no ranking. O serviço irá buscar no `/log` os turnos daquela idBatalha e computar a pontuação final. O body deve conter apenas o id da batalha finalizada a ser inserida no ranking. Exemplo:
 
 ```json
 {
