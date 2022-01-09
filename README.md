@@ -17,6 +17,8 @@ O objetivo é projetar e implementar os serviços REST de um jogo de RPG baseado
 - [/log](#log)
 - [/ranking](#ranking)
 
+###### Veja o swagger desses serviços [aqui](https://github.com/pgurjao/heroi-gen/blob/master/src/main/resources/swagger/swaggerHeroi-Gen.yaml). Cole o conteúdo do swagger em [editor.swagger.io](https://editor.swagger.io/) para ver formatado.
+
 <h2 id="heroi">Microserviço /heroi</h2>
 
 Lista todos os heróis cadastrados ou retorna um herói específico e as suas características. É chamado via `GET` e retorna um JSON com os dados. Exemplo:
@@ -117,7 +119,7 @@ Ao chamar via `POST` é feita a inserção da pontuação de uma batalha finaliz
 ```
 
 
-## Critérios de Avalição
+## Critérios de Avalição (pontuação aproximada atiginda até o momento: 3.5)
 
 - [x] Implementar os serviços seguindo os padrões restfull: 2 pontos
 - [ ] Receber configurações do servidor de configuração: 0.5 ponto
@@ -133,4 +135,4 @@ Ao chamar via `POST` é feita a inserção da pontuação de uma batalha finaliz
 **(Se o serviço implementado não possuir a necessidade de cache o Zipkin passa a valer 1 ponto. O aluno deverá explicar por que o cache não se faz necessário)** <br>
 
 - [x] Colocar os códigos em repositório público e com README: 0.5 ponto
-- [ ] Utilizar swagger para documentar o serviço: 1 ponto
+- [x] Utilizar swagger para documentar o serviço: 1 ponto
