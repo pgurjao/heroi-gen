@@ -31,7 +31,7 @@ public class RankingController {
 	@Autowired
 	RankingService rankingService;
 	
-	@GetMapping(value = "/")
+	@GetMapping(value = "")
 	public ResponseEntity<String> getRanking() {
 		
 		List<ItemRanking> ranking = rankingService.getRanking();
@@ -44,7 +44,7 @@ public class RankingController {
 				.contentType(MediaType.APPLICATION_JSON).body(ranking.toString());
 	}
 	
-	@PostMapping(value = "/salvaranking", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> gravarRanking(@Valid @RequestBody RankingRequest request) throws URISyntaxException {
 
 		ResponseEntity<String> response = new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);

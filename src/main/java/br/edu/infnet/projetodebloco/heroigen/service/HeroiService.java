@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.edu.infnet.projetodebloco.heroigen.enums.HeroisEnum;
 import br.edu.infnet.projetodebloco.heroigen.model.Heroi;
 import br.edu.infnet.projetodebloco.heroigen.repository.HeroiRepository;
 import lombok.Getter;
@@ -20,8 +19,8 @@ public class HeroiService {
 	@Autowired
 	private HeroiRepository heroiRepository;
 	
-	public Optional<Heroi> getByHeroi(HeroisEnum heroiEnum) {
-		return heroiRepository.findByHeroi(heroiEnum);
+	public Optional<Heroi> getById(Integer idHeroi) {
+		return heroiRepository.findById(idHeroi);
 	}
 	
 	public List<Heroi> findAll(){

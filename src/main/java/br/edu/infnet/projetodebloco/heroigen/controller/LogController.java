@@ -31,7 +31,7 @@ public class LogController {
 	@Autowired
 	LogService logService;
 	
-	@GetMapping(value = "/batalha/{idBatalha}")
+	@GetMapping(value = "/batalhas/{idBatalha}")
 	public ResponseEntity<String> getBatalha(@Valid @PathVariable("idBatalha") Integer idBatalha) {
 		
 		List<ItemLog> batalha = logService.getBatalha(idBatalha);
@@ -49,19 +49,14 @@ public class LogController {
 				.contentType(MediaType.APPLICATION_JSON).body(batalha.toString());
 	}
 	
-	@PostMapping(value = "/salvalog", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<LogTurnoBatalhaResponse> gravarTurnoBatalha(@Valid @RequestBody ItemLog logTurnoBatalhaRequest) {
+	@PostMapping(value = "/batalhas", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> gravarTurnoBatalha(@Valid @RequestBody ItemLog logTurnoBatalhaRequest) {
 
 		log.info("\n\n O turno a ser logado eh:\n{}", logTurnoBatalhaRequest);
 
-		LogTurnoBatalhaResponse response = new LogTurnoBatalhaResponse(null, null, null);
-		
 		logService.salvar(logTurnoBatalhaRequest);
 		
-		response.setStatus(HttpStatus.CREATED.value());
-		response.setDetails("Entrada no log registrada com sucesso");
-		
 		return ResponseEntity.created(null)
-				.contentType(MediaType.APPLICATION_JSON).body(response);
+				.contentType(MediaType.APPLICATION_JSON).body("Entrada no log registrada com sucesso");
 	}
 }

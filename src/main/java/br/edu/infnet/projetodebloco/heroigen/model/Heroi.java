@@ -2,11 +2,12 @@ package br.edu.infnet.projetodebloco.heroigen.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 import com.google.gson.GsonBuilder;
 
-import br.edu.infnet.projetodebloco.heroigen.enums.HeroisEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -21,10 +22,12 @@ import lombok.Setter;
 @Entity
 public class Heroi {
 
-	@Id @GeneratedValue
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "heroi_generator")
+	@SequenceGenerator(name="heroi_generator", sequenceName = "heroi_seq", allocationSize=50)
 	private Integer id;
 	
-	private HeroisEnum heroi;
+	private String heroi;
 	
 	private Integer pontosDeVida;
 	private Integer forca;

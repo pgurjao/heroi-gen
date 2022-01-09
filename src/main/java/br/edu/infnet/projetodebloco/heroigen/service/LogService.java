@@ -1,7 +1,6 @@
 package br.edu.infnet.projetodebloco.heroigen.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -30,8 +29,8 @@ public class LogService {
 		return logRepository.findAll(Sort.by(Sort.Direction.ASC, "idBatalha"));
 	}
 	
-	public List<ItemLog> getBatalha(Integer id_batalha) {
-		return logRepository.findBatalha(id_batalha);
+	public List<ItemLog> getBatalha(Integer idBatalha) {
+		return logRepository.findBatalha(idBatalha);
 	}
 	
 	public void delete(Integer id_ItemLog) {

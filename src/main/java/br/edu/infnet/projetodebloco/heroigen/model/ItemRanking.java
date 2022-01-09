@@ -2,7 +2,10 @@ package br.edu.infnet.projetodebloco.heroigen.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import com.google.gson.GsonBuilder;
 
@@ -18,14 +21,17 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 @Entity
+@Table(name = "batalha")
 public class ItemRanking {
 
-	@Id @GeneratedValue
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "batalha_generator")
+	@SequenceGenerator(name="batalha_generator", sequenceName = "batalha_seq", allocationSize=50)
 	private Integer id;
 	
 	private Integer posicao;
 
-	private String idBatalha;
+	private Integer id_batalha;
 	private String usuario;
 
 	private Integer pontuacao;
