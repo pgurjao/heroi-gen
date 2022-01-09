@@ -17,7 +17,7 @@ O objetivo é projetar e implementar os serviços REST de um jogo de RPG baseado
 - [/log](#log)
 - [/ranking](#ranking)
 
-###### Veja o swagger desses serviços [aqui](https://github.com/pgurjao/heroi-gen/blob/master/src/main/resources/swagger/swaggerHeroi-Gen.yaml). Cole o conteúdo do swagger em [editor.swagger.io](https://editor.swagger.io/) para ver formatado.
+Veja o <b>`swagger`</b> desses serviços [aqui](https://github.com/pgurjao/heroi-gen/blob/master/src/main/resources/swagger/swaggerHeroi-Gen.yaml). Cole o conteúdo do swagger em [editor.swagger.io](https://editor.swagger.io/) para ver com a formatação.
 
 <h2 id="heroi">Microserviço /heroi</h2>
 
