@@ -129,7 +129,7 @@ Ao chamar via `POST` é feita a inserção da pontuação de uma batalha finaliz
 - [ ] Utilizar ClientSide Loadbalancer (Ribbon ou Feign): 1 ponto
 - [ ] Ser resiliente a falhas: 1 a 2 pontos<br>
 <b>(1 ponto = Implementar apenas um método visto, 2 pontos = implementar mais de 1)</b><br>
-- [ ] Criar uma Conta no Papertrail e utilizar agregação de Logs: 0.5 ponto
+- [ ] Criar uma Conta no Papertrail e utilizar agregação de Logs: 0.5 ponto **(William)**
 - [ ] Utilizar Zipkin: 0.5 ponto
 - [ ] Utilizar Algum tipo de Cache: 0.5 ponto<br>
 **(Se o serviço implementado não possuir a necessidade de cache o Zipkin passa a valer 1 ponto. O aluno deverá explicar por que o cache não se faz necessário)** <br>
