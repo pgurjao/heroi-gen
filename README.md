@@ -122,8 +122,8 @@ Ao chamar via `POST` é feita a inserção da pontuação de uma batalha finaliz
 ## Critérios de Avalição (pontuação aproximada atiginda até o momento: 3.5)
 
 - [x] Implementar os serviços seguindo os padrões restfull: 2 pontos
-- [ ] Receber configurações do servidor de configuração: 0.5 ponto
-- [ ] Decodificar o Token JWT enviado para saber qual usuário está jogando: 0.5 ponto<br>
+- [ ] Receber configurações do servidor de configuração: 0.5 ponto **(Paulo)**
+- [ ] Decodificar o Token JWT enviado para saber qual usuário está jogando: 0.5 ponto **(Pedro)** <br>
 **(Se o seu MS não precisar saber qual o usuário está jogando o tópico 2 passa a valer 1 ponto)** <br>
 - [ ] Se registrar no Eureka: 1 ponto
 - [ ] Utilizar ClientSide Loadbalancer (Ribbon ou Feign): 1 ponto
