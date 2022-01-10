@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -25,10 +26,16 @@ public class HeroiController {
 
 	@Autowired
 	HeroiService heroiService;
+
+	@Value("${crypto.chaveprivada}")
+	String chavePrivada;
 	
 	@GetMapping(value = "/herois")
 	public ResponseEntity<String> listarHerois() {
 
+		
+		System.out.println("\n\nA chave privada eh:" + chavePrivada + "\n\n");
+		
 		List<Heroi> heroi = heroiService.findAll();
 		if (heroi.size() == 0)
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).contentType(MediaType.TEXT_PLAIN)
