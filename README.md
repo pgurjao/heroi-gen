@@ -121,18 +121,20 @@ Ao chamar via `POST` é feita a inserção da pontuação de uma batalha finaliz
 
 ## Critérios de Avalição (pontuação aproximada atiginda até o momento: 3.5)
 
-- [x] Implementar os serviços seguindo os padrões restfull: 2 pontos
-- [ ] Receber configurações do servidor de configuração: 0.5 ponto **(Paulo)**
-- [ ] Decodificar o Token JWT enviado para saber qual usuário está jogando: 0.5 ponto **(Pedro)** <br>
-**(Se o seu MS não precisar saber qual o usuário está jogando o tópico 2 passa a valer 1 ponto)** <br>
-- [ ] Se registrar no Eureka: 1 ponto
-- [ ] Utilizar ClientSide Loadbalancer (Ribbon ou Feign): 1 ponto
-- [ ] Ser resiliente a falhas: 1 a 2 pontos<br>
-<b>(1 ponto = Implementar apenas um método visto, 2 pontos = implementar mais de 1)</b><br>
-- [ ] Criar uma Conta no Papertrail e utilizar agregação de Logs: 0.5 ponto
-- [ ] Utilizar Zipkin: 0.5 ponto
-- [ ] Utilizar Algum tipo de Cache: 0.5 ponto<br>
-**(Se o serviço implementado não possuir a necessidade de cache o Zipkin passa a valer 1 ponto. O aluno deverá explicar por que o cache não se faz necessário)** <br>
+- [x] 1. Implementar os serviços seguindo os padrões restfull: 2 pontos
+- [x] 2. Receber configurações do servidor de configuração: 0.5 ponto
+- [ ] 3. Decodificar o Token JWT enviado para saber qual usuário está jogando: 0.5 ponto **(Pedro)** <br>
+**Obs.: Se o seu MS não precisar saber qual o usuário está jogando o tópico 2 passa a valer 1 ponto** <br>
 
-- [x] Colocar os códigos em repositório público e com README: 0.5 ponto
-- [x] Utilizar swagger para documentar o serviço: 1 ponto
+- [ ] 4. Se registrar no Eureka: 1 ponto
+- [ ] 5. Utilizar ClientSide Loadbalancer (Ribbon ou Feign): 1 ponto
+- [ ] 6. Ser resiliente a falhas: 1 a 2 pontos<br>
+**Obs.: 1 ponto = Implementar apenas um método visto, 2 pontos = implementar mais de 1)** <br>
+
+- [ ] 7. Criar uma Conta no Papertrail e utilizar agregação de Logs: 0.5 ponto
+- [ ] 8. Utilizar Zipkin: 0.5 ponto
+- [ ] 9. Utilizar algum tipo de Cache: 0.5 ponto<br>
+**Obs.: Se o serviço implementado não possuir a necessidade de cache o Zipkin passa a valer 1 ponto. O aluno deverá explicar por que o cache não se faz necessário** <br>
+
+- [x] 10. Colocar os códigos em repositório público e com README: 0.5 ponto
+- [x] 11. Utilizar swagger para documentar o serviço: 1 ponto
