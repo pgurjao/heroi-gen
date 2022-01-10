@@ -27,14 +27,13 @@ public class HeroiController {
 	@Autowired
 	HeroiService heroiService;
 
-	@Value("${crypto.chaveprivada}")
+//	@Value("${crypto.chaveprivada}")
 	String chavePrivada;
 	
 	@GetMapping(value = "/herois")
 	public ResponseEntity<String> listarHerois() {
 
-		
-		System.out.println("\n\nA chave privada eh:" + chavePrivada + "\n\n");
+//		System.out.println("\n\nA chave privada eh:" + chavePrivada + "\n\n");
 		
 		List<Heroi> heroi = heroiService.findAll();
 		if (heroi.size() == 0)
