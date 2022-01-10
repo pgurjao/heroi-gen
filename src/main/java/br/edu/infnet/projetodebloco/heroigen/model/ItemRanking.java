@@ -21,7 +21,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "batalha")
+@Table(name = "ranking")
 public class ItemRanking {
 
 	@Id
@@ -31,7 +31,8 @@ public class ItemRanking {
 	
 	private Integer posicao;
 
-	private Integer id_batalha;
+//	@Column(name = "batalha_id")
+	private Integer batalhaId;
 	private String usuario;
 
 	private Integer pontuacao;

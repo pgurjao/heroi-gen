@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -27,8 +26,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "turno")
-public class ItemLog {
+//@Table(name = "turno")
+public class Turno {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "turno_generator")
@@ -37,8 +36,8 @@ public class ItemLog {
 
 	@NotNull
 	@Min(value = 1, message="IdBatalha não pode ser negativo")
-//	@Column(name = "id_batalha")
-	private Integer id_batalha;
+//	@Column(name = "batalha_id")
+	private Integer batalhaId;
 	
 	@NotBlank(message = "Usuario não pode ser vazio")
 	private String usuario;

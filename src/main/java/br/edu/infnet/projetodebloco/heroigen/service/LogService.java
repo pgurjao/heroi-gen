@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import br.edu.infnet.projetodebloco.heroigen.model.ItemLog;
+import br.edu.infnet.projetodebloco.heroigen.model.Turno;
 import br.edu.infnet.projetodebloco.heroigen.model.ItemRanking;
 import br.edu.infnet.projetodebloco.heroigen.repository.LogRepository;
 import lombok.Getter;
@@ -20,17 +20,17 @@ public class LogService {
 	@Autowired
 	private LogRepository logRepository;
 	
-	public ItemLog salvar(ItemLog ItemLog) {
+	public Turno salvar(Turno ItemLog) {
 		//Regras de Negócio
 		return logRepository.save(ItemLog);
 	}
 	
-	public List<ItemLog> listAll(){
-		return logRepository.findAll(Sort.by(Sort.Direction.ASC, "idBatalha"));
+	public List<Turno> listAll(){
+		return logRepository.findAllOrderByBatalhaIdAsc();
 	}
 	
-	public List<ItemLog> getBatalha(Integer idBatalha) {
-		return logRepository.findBatalha(idBatalha);
+	public List<Turno> getBatalha(Integer idBatalha) {
+		return logRepository.findByBatalhaId(idBatalha);
 	}
 	
 	public void delete(Integer id_ItemLog) {

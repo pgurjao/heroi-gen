@@ -18,7 +18,7 @@ public class RankingService {
 	
 	private String errorMessage;
 	
-	public Boolean calculaRanking(String idBatalha) {
+	public Boolean calculaRanking(Integer batalhaId) {
 
 		return true;
 	}

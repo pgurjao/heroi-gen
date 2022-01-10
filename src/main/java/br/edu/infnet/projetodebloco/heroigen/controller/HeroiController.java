@@ -30,11 +30,9 @@ public class HeroiController {
 	public ResponseEntity<String> listarHerois() {
 
 		List<Heroi> heroi = heroiService.findAll();
-		
 		if (heroi.size() == 0)
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).contentType(MediaType.TEXT_PLAIN)
 					.body("Nenhum herói cadastrado");
-
 		return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON)
 				.body(heroi.toString());
 	}
@@ -50,7 +48,6 @@ public class HeroiController {
 			return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON)
 					.body(heroiRetorno.toString());
 		}
-		
 		return ResponseEntity.status(HttpStatus.NOT_FOUND)
 				.contentType(MediaType.TEXT_PLAIN).body("Heroi não encontrado!");
 	}

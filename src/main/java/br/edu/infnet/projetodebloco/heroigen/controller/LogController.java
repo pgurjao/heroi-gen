@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.edu.infnet.projetodebloco.heroigen.model.ItemLog;
+import br.edu.infnet.projetodebloco.heroigen.model.Turno;
 import br.edu.infnet.projetodebloco.heroigen.response.LogTurnoBatalhaResponse;
 import br.edu.infnet.projetodebloco.heroigen.service.LogService;
 import lombok.extern.slf4j.Slf4j;
@@ -34,7 +34,7 @@ public class LogController {
 	@GetMapping(value = "/batalhas/{idBatalha}")
 	public ResponseEntity<String> getBatalha(@Valid @PathVariable("idBatalha") Integer idBatalha) {
 		
-		List<ItemLog> batalha = logService.getBatalha(idBatalha);
+		List<Turno> batalha = logService.getBatalha(idBatalha);
 //		if(byId.isPresent()) {
 //			model.addAttribute("autor", byId.get());
 //		}
@@ -50,7 +50,7 @@ public class LogController {
 	}
 	
 	@PostMapping(value = "/batalhas", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> gravarTurnoBatalha(@Valid @RequestBody ItemLog logTurnoBatalhaRequest) {
+	public ResponseEntity<String> gravarTurnoBatalha(@Valid @RequestBody Turno logTurnoBatalhaRequest) {
 
 		log.info("\n\n O turno a ser logado eh:\n{}", logTurnoBatalhaRequest);
 

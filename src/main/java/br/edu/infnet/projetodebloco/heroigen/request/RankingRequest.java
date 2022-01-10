@@ -17,8 +17,8 @@ import lombok.Setter;
 @Builder
 public class RankingRequest {
 	
-	@NotBlank(message = "idBatalha não pode ser vazio")
-	private String idBatalha;
+	@NotBlank(message = "batalhaId não pode ser vazio")
+	private String batalhaId;
 	
 	@Override
 	public String toString() {
