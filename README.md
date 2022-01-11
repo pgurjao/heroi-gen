@@ -126,7 +126,7 @@ Ao chamar via `POST` é feita a inserção da pontuação de uma batalha finaliz
 - [ ] 3. Decodificar o Token JWT enviado para saber qual usuário está jogando: 0.5 ponto **(Pedro)** <br>
 **Obs.: Se o seu MS não precisar saber qual o usuário está jogando o tópico 2 passa a valer 1 ponto** <br>
 
-- [ ] 4. Se registrar no Eureka: 1 ponto
+- [ ] 4. Se registrar no Eureka: 1 ponto **(Paulo)**
 - [ ] 5. Utilizar ClientSide Loadbalancer (Ribbon ou Feign): 1 ponto
 - [ ] 6. Ser resiliente a falhas: 1 a 2 pontos<br>
 **Obs.: 1 ponto = Implementar apenas um método visto, 2 pontos = implementar mais de 1** <br>
