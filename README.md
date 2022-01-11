@@ -129,9 +129,9 @@ Ao chamar via `POST` é feita a inserção da pontuação de uma batalha finaliz
 - [ ] 4. Se registrar no Eureka: 1 ponto
 - [ ] 5. Utilizar ClientSide Loadbalancer (Ribbon ou Feign): 1 ponto
 - [ ] 6. Ser resiliente a falhas: 1 a 2 pontos<br>
-**Obs.: 1 ponto = Implementar apenas um método visto, 2 pontos = implementar mais de 1)** <br>
+**Obs.: 1 ponto = Implementar apenas um método visto, 2 pontos = implementar mais de 1** <br>
 
-- [ ] 7. Criar uma Conta no Papertrail e utilizar agregação de Logs: 0.5 ponto
+- [ ] 7. Criar uma conta no Papertrail e utilizar agregação de Logs: 0.5 ponto **(William)**
 - [ ] 8. Utilizar Zipkin: 0.5 ponto
 - [ ] 9. Utilizar algum tipo de Cache: 0.5 ponto<br>
 **Obs.: Se o serviço implementado não possuir a necessidade de cache o Zipkin passa a valer 1 ponto. O aluno deverá explicar por que o cache não se faz necessário** <br>
