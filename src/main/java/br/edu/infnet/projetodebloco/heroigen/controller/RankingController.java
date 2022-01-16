@@ -36,9 +36,11 @@ public class RankingController {
 	public ResponseEntity<String> getRanking() {
 		
 		List<ItemRanking> ranking = rankingService.getRanking();
+		
 		if (ranking.size() == 0)
 			return ResponseEntity.status(HttpStatus.NOT_FOUND)
 					.contentType(MediaType.TEXT_PLAIN).body("Ranking vazio!");
+		
 		return ResponseEntity.ok()
 				.contentType(MediaType.APPLICATION_JSON).body(ranking.toString());
 	}

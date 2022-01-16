@@ -1,5 +1,6 @@
 package br.edu.infnet.projetodebloco.heroigen.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,8 +32,9 @@ public class ItemRanking {
 	
 	private Integer posicao;
 
-//	@Column(name = "batalha_id")
+	@Column(name = "batalha_id")
 	private Integer batalhaId;
+	
 	private String usuario;
 
 	private Integer pontuacao;
