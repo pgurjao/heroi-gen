@@ -27,4 +27,8 @@ public class RankingService {
 		return rankingRepository.findAllSorted();
 	}
 
+	public ItemRanking getRanking(Integer batalhaId) {
+		return this.rankingRepository.getById(batalhaId);
+	}
+
 }

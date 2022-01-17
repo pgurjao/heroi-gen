@@ -20,17 +20,18 @@ public class LogService {
 	@Autowired
 	private LogRepository logRepository;
 	
-	public Turno salvar(Turno ItemLog) {
+	public Turno salvar(Turno itemLog, ItemRanking ranking) {
 		//Regras de Negócio
-		return logRepository.save(ItemLog);
+		itemLog.setRanking(ranking);
+		return logRepository.save(itemLog);
 	}
 	
 	public List<Turno> listAll(){
 		return logRepository.findAllOrderByBatalhaIdAsc();
 	}
 	
-	public List<Turno> getBatalha(Integer idBatalha) {
-		return logRepository.findByBatalhaId(idBatalha);
+	public List<Turno> getBatalha(Integer idBatalha, String nomeUsuario) {
+		return logRepository.findBatalha(idBatalha, nomeUsuario);
 	}
 	
 	public void delete(Integer id_ItemLog) {
