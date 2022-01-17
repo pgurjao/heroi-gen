@@ -3,6 +3,7 @@ package br.edu.infnet.projetodebloco.heroigen.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.projetodebloco.heroigen.model.ItemRanking;
@@ -23,6 +24,7 @@ public class RankingService {
 		return true;
 	}
 	
+	@Cacheable( cacheNames="rankingItem", key="#root.method.name" )
 	public List<ItemRanking> getRanking(){
 		return rankingRepository.findAllSorted();
 	}

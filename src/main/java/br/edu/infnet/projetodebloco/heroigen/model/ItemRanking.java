@@ -1,5 +1,7 @@
 package br.edu.infnet.projetodebloco.heroigen.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +25,7 @@ import lombok.Setter;
 @Builder
 @Entity
 @Table(name = "ranking")
-public class ItemRanking {
+public class ItemRanking implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "batalha_generator")
