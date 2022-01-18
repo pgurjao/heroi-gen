@@ -15,7 +15,7 @@ O objetivo é projetar e implementar os serviços REST de um jogo de RPG baseado
 
 - [/heroi](#heroi) - este repositório
 - [/log](https://github.com/pgurjao/log-microsservico#log)
-- [/ranking](#ranking)
+- [/ranking](https://github.com/pgurjao/ranking-microsservico#ranking)
 
 Veja o <b>`swagger`</b> desses serviços [aqui](https://github.com/pgurjao/heroi-gen/blob/master/src/main/resources/swagger/swaggerHeroi-Gen.yaml). Cole o conteúdo do swagger em [editor.swagger.io](https://editor.swagger.io/) para ver com a formatação.
 
@@ -45,51 +45,6 @@ Atualmente estão implementados os seguintes herois:
 | Bárbaro   | 13                   | 6     | 1      | 3         | 2d6                 |
 | Paladino  | 15                   | 2     | 5      | 1         | 2d4                 |
 
-
-
-<h2 id="ranking">Microserviço /ranking</h2>
-
-Exibe o ranking atual contendo uma lista com nome dos usuários e a respectiva pontuação no final da partida, ordenada de forma decrescente por pontos. Também calcula a pontuação do usuário ao final da partida e insere o resultado no ranking em ordem decrescente de pontos.
-
-Ao chamar via `GET` o ranking atual é retornado via JSON. Exemplo:
-
-```json
-{
-  {
-    "posicao": 1,
-    "idBatalha": "123456",
-    "usuario": "Bruninha Destruidora",
-    "pontuacao": 56
-  },
-  {
-    "posicao": 2,
-    "idBatalha": "654321",
-    "usuario": "Orc Killer",
-    "pontuacao": 51
-  },
-  {
-    "posicao": 3,
-    "idBatalha": "323111",
-    "usuario": "Zombie Slayer",
-    "pontuacao": 50
-  },
-  {
-    "posicao": 4,
-    "idBatalha": "555777",
-    "usuario": "Bruninha Destruidora",
-    "pontuacao": 49
-  }
-}
-```
-
-
-Ao chamar via `POST` é feita a inserção da pontuação de uma batalha finalizada do usuário no ranking. O serviço irá buscar no `/log` os turnos daquela idBatalha e computar a pontuação final. O body deve conter apenas o id da batalha finalizada a ser inserida no ranking. Exemplo:
-
-```json
-{
-  "idBatalha": "123456"
-}
-```
 
 
 ## Critérios de Avalição (pontuação aproximada atiginda até o momento: 6.5)
