@@ -4,7 +4,7 @@
 
 
 #### Prova Professor Leonardo Silva da Gloria
-#### Grupo: Eduardo Gaspar, Paulo Gurjão, William dos Santos Pereira<br><br>
+#### Grupo: Eduardo Gaspar, Paulo Gurjão, Pedro Queiroz, William dos Santos Pereira<br><br>
 
 
 ## Projeto de Bloco - Jogo RPG com Arquitetura em  Microserviços 
@@ -13,8 +13,8 @@ O objetivo é projetar e implementar os serviços REST de um jogo de RPG baseado
 
 ## Serviços a Serem Implementados pelo Grupo
 
-- [/heroi](#heroi)
-- [/log](#log)
+- [/heroi](#heroi) - este repositório
+- [/log](https://github.com/pgurjao/log-microsservico#log)
 - [/ranking](#ranking)
 
 Veja o <b>`swagger`</b> desses serviços [aqui](https://github.com/pgurjao/heroi-gen/blob/master/src/main/resources/swagger/swaggerHeroi-Gen.yaml). Cole o conteúdo do swagger em [editor.swagger.io](https://editor.swagger.io/) para ver com a formatação.
@@ -46,33 +46,6 @@ Atualmente estão implementados os seguintes herois:
 | Paladino  | 15                   | 2     | 5      | 1         | 2d4                 |
 
 
-<h2 id="log">Microserviço /log</h2>
-
-Recebe o resultado de cada turno da partida (quem sofreu quantos pontos de dano, etc) e salva de modo permitir o seu "replay", se necessário. Também permite ao microserviço `/ranking` fazer o cálculo da pontuação ao final da partida. É chamado via `POST` e o body deve conter:
-
-```json
-{
-  "idBatalha": "identificador único da batalha na DB",
-  "usuario": "nome do usuário no sistema",
-  "heroi": "tipo de herói (GUERREIRO, BARBARO, PALADINO)",
-  "monstro": "tipo de monstro (MORTO_VIVO, ORC, KOBOLD)",
-  "iniciativa": "tipo do personagem que está atacando (GUERREIRO, ORC, etc)",
-  "dano": "Integer (dano efetivamente causado ao personagem)"
-}
-```
-
-Exemplo:
-
-```json
-{
-  "idBatalha": "123456",
-  "usuario": "Bruninha Destruidora",
-  "heroi": "BARBARO",
-  "monstro": "ORC",
-  "iniciativa": "ORC",
-  "dano": 4
-}
-```
 
 <h2 id="ranking">Microserviço /ranking</h2>
 
