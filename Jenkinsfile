@@ -18,7 +18,7 @@ pipeline {
             		sh './removeHeroiJar.sh'
             		echo 'Jar deletado com sucesso'
             		echo 'Copiando .jar novo para pasta definitiva'
-            		sh 'cp /var/lib/jenkins/workspace/heroi/heroi/target/heroi*.jar /home/ubuntu/heroi-gen/heroi.jar'
+            		sh 'cp /var/lib/jenkins/workspace/heroi-gen/target/heroi*.jar /home/ubuntu/heroi-gen/heroi.jar'
             		echo 'Jar copiado com sucesso'
             		echo 'Subindo instancia nova'
 					sh './runHeroi.sh'
