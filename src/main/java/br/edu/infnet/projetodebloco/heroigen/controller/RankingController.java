@@ -11,6 +11,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.edu.infnet.projetodebloco.heroigen.dtos.UsuarioAutenticado;
 import br.edu.infnet.projetodebloco.heroigen.model.ItemRanking;
 import br.edu.infnet.projetodebloco.heroigen.request.RankingRequest;
 import br.edu.infnet.projetodebloco.heroigen.service.RankingService;
@@ -47,11 +49,15 @@ public class RankingController {
 	}
 	
 	@PostMapping(value = "/{batalhaId}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> gravarBatalha(@Valid @PathVariable("batalhaId") Integer batalhaId) {
+	public ResponseEntity<String> gravarBatalha(
+			@Valid @PathVariable("batalhaId") Integer batalhaId,
+			Authentication auth) {
 
 		log.info("\n\n A batalha a ser rankeada é:\n{}", batalhaId);
 		
-		if (!rankingService.calculaRanking(batalhaId)) {
+		UsuarioAutenticado usuario = (UsuarioAutenticado) auth.getPrincipal();
+		
+		if (!rankingService.calculaRanking(batalhaId, usuario.getUsername())) {
 			return ResponseEntity.badRequest().contentType(MediaType.TEXT_PLAIN)
 			.body(rankingService.getErrorMessage());
 		} else {

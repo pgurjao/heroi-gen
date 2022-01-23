@@ -68,19 +68,12 @@ public class LogController {
 		
 		final String nomeUsuarioLogado = usuario.getUsername();
 		
-		ItemRanking ranking = this.rankingService.getRanking(logTurnoBatalhaRequest.getBatalhaId());
-		
 		if( !nomeUsuarioLogado.equals( logTurnoBatalhaRequest.getUsuario() ) ) 
 		{
 			throw new UsuarioDiferenteDoAutenticadoException();			
 		}
 		
-		if( !nomeUsuarioLogado.equals( ranking.getUsuario() ) ) 
-		{
-			throw new UsuarioDiferenteDoAutenticadoException();			
-		}
-		
-		logService.salvar(logTurnoBatalhaRequest, ranking);
+		logService.salvar(logTurnoBatalhaRequest);
 		
 		return ResponseEntity.created(null)
 				.contentType(MediaType.APPLICATION_JSON).body("Entrada no log registrada com sucesso");

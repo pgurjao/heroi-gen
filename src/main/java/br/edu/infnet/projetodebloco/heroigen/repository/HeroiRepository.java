@@ -15,6 +15,8 @@ public interface HeroiRepository extends JpaRepository<Heroi, Integer> {
 
 	List<Heroi> findAll();
 
+	Heroi findByHeroi(String nomeHeroi);
+
 //	@Query("select h from heroi h where heroi = ?1")
 //	Optional<Heroi> findByHeroi(Integer id);
 

@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Formula;
+
 import com.google.gson.GsonBuilder;
 
 import lombok.AllArgsConstructor;
@@ -32,14 +34,20 @@ public class ItemRanking implements Serializable {
 	@SequenceGenerator(name="batalha_generator", sequenceName = "batalha_seq", allocationSize=50)
 	private Integer id;
 	
+	@Formula("select count(*) from ranking r where r.pontuacao < pontuacao ")
 	private Integer posicao;
 
-	@Column(name = "batalha_id")
-	private Integer batalhaId;
+//	@Column(name = "batalha_id")
+//	private Integer batalhaId;
 	
 	private String usuario;
 
 	private Integer pontuacao;
+	
+	public void incrementaPontuacao(int incremnento) 
+	{
+		this.pontuacao += incremnento;
+	}
 
 	@Override
 	public String toString() {

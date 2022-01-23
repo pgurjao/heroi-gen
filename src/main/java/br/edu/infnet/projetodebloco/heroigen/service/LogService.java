@@ -20,9 +20,8 @@ public class LogService {
 	@Autowired
 	private LogRepository logRepository;
 	
-	public Turno salvar(Turno itemLog, ItemRanking ranking) {
+	public Turno salvar(Turno itemLog) {
 		//Regras de Negócio
-		itemLog.setRanking(ranking);
 		return logRepository.save(itemLog);
 	}
 	
@@ -40,6 +39,11 @@ public class LogService {
 	
 	public List<ItemRanking> obterRanking() {
 		
+		return null;
+	}
+
+	public Turno obterUltimoLog(Integer batalhaId) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 	

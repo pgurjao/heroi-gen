@@ -23,8 +23,13 @@ public class HeroiService {
 		return heroiRepository.findById(idHeroi);
 	}
 	
-	public List<Heroi> findAll(){
+	public List<Heroi> findAll(){ 
 		return heroiRepository.findAll();
+	}
+
+	public Heroi obterPorNome(String nomeHeroi) {
+		// TODO Auto-generated method stub
+		return this.heroiRepository.findByHeroi(nomeHeroi);
 	}
 
 }

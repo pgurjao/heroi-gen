@@ -41,8 +41,6 @@ public class Turno {
 
 	@NotNull
 	@Min(value = 1, message="IdBatalha não pode ser negativo")
-//	@Column(name = "batalha_id")
-	@Transient
 	private Integer batalhaId;
 	
 	@NotBlank(message = "Usuario não pode ser vazio")
@@ -52,7 +50,7 @@ public class Turno {
 	private String heroi;
 
 	@NotNull(message = "Monstro não pode ser vazio")
-	private String monstro;
+	private String monstro; 
 	
 	@NotNull(message = "Atacante não pode ser vazio")
 	@Enumerated
@@ -62,11 +60,6 @@ public class Turno {
 	@Max(value = 18, message="Dano não pode ser maior que 18")
 	@NotNull(message = "Dano não pode ser null")
 	private Integer dano;
-	
-	@JsonIgnore
-	@ManyToOne()
-	@JoinColumn(name = "batalha_id")
-	private ItemRanking ranking;
 	
 	@Override
 	public String toString() {
