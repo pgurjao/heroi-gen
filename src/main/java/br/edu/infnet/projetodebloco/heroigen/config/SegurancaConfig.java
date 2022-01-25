@@ -29,6 +29,10 @@ public class SegurancaConfig extends WebSecurityConfigurerAdapter{
 			.authorizeRequests()
 			.antMatchers( HttpMethod.GET, "/ranking/")
 			.permitAll()
+			.and()
+			.authorizeHttpRequests()
+			.antMatchers("/actuator/**")
+			.permitAll()
 			
 			.anyRequest().authenticated()
 			.and()
@@ -44,7 +48,7 @@ public class SegurancaConfig extends WebSecurityConfigurerAdapter{
 		web.ignoring().antMatchers(
 				"/h2-console/**"
 				,"/ranking/"
-				,"/actuator/"
+				,"/actuator/**"
 				,"/actuator/info"
 				,"/heroi-gen/herois"
 				,"/heroi-gen/herois/{id}")

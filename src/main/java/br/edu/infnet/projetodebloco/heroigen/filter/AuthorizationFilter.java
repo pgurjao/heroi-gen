@@ -64,6 +64,7 @@ public class AuthorizationFilter extends OncePerRequestFilter{
 		
 		return 		requestURI.startsWith("/h2-console") 
 				|| 	( requestURI.startsWith("/ranking") && method.equals("GET"))
+				||  ( requestURI.startsWith("/actuator") )
 				|| 	( requestURI.startsWith("/herois") );
 	}
 
