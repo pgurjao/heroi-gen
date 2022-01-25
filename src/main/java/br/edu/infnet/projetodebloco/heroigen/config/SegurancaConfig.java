@@ -44,6 +44,8 @@ public class SegurancaConfig extends WebSecurityConfigurerAdapter{
 		web.ignoring().antMatchers(
 				"/h2-console/**"
 				,"/ranking/"
+				,"/actuator/"
+				,"/actuator/info"
 				,"/heroi-gen/herois"
 				,"/heroi-gen/herois/{id}")
 		;
